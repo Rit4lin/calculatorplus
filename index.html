@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0d17" />
+    <meta name="description" content="Calculadora Plus. Tus números, con otra perspectiva." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Calculadora Plus | Calcula mejor</title>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Calculadora Plus, inicio">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" focusable="false"><rect x="5" y="5" width="22" height="22" rx="7" stroke="currentColor" stroke-width="2"/><path d="M11 13h10M16 8v10M11 23h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span>calculadora<span class="brand-plus">plus</span><span class="brand-period">.</span></span>
+        </a>
+        <span class="account-status"><span class="status-dot"></span> Plan gratuito</span>
+      </header>
+
+      <main class="main-content">
+        <section class="intro" aria-labelledby="headline">
+          <div class="intro-pill"><span class="pill-sparkle" aria-hidden="true">✦</span> LA NUEVA ERA DEL CÁLCULO</div>
+          <h1 id="headline">Los números,<br /><span>más inteligentes.</span></h1>
+          <p>Todo empieza con una operación. Una calculadora sencilla, precisa y diseñada para tu día a día.</p>
+          <div class="feature-pills" aria-label="Características">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Experiencia intuitiva</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.8 6.2L20 11l-6.2 1.8L12 19l-1.8-6.2L4 11l6.2-1.8z"/></svg> Precisión digital</span>
+          </div>
+        </section>
+
+        <section class="calculator-panel" aria-label="Calculadora">
+          <div class="calculator-topline"><div class="calc-label"><span class="calc-indicator"></span> MODO ESTÁNDAR</div><span class="calc-version">v 2.0</span></div>
+          <div class="calculator-display" id="display" aria-live="polite" aria-atomic="true">
+            <div class="display-top"><span id="display-label">OPERACIÓN ACTUAL</span><span class="display-icon" aria-hidden="true">⌁</span></div>
+            <div class="expression" id="expression">0</div>
+            <div class="display-bottom" id="display-hint">Tu próxima operación empieza aquí</div>
+            <div class="loading-screen" id="loading-screen" hidden aria-live="assertive">
+              <div class="loading-spinner" aria-hidden="true"></div>
+              <strong>Calculando resultado</strong>
+              <span>Preparando tu respuesta...</span>
+              <div class="loading-progress" aria-hidden="true"><span></span></div>
+            </div>
+          </div>
+          <div class="keypad" id="keypad" aria-label="Teclado de la calculadora">
+            <button type="button" class="key key-action" data-key="clear" aria-label="Borrar todo">AC</button>
+            <button type="button" class="key key-action" data-key="sign" aria-label="Cambiar signo">+/−</button>
+            <button type="button" class="key key-action" data-key="percent" aria-label="Porcentaje">%</button>
+            <button type="button" class="key key-operator" data-key="divide" aria-label="Dividir">÷</button>
+            <button type="button" class="key" data-key="7">7</button>
+            <button type="button" class="key" data-key="8">8</button>
+            <button type="button" class="key" data-key="9">9</button>
+            <button type="button" class="key key-operator" data-key="multiply" aria-label="Multiplicar">×</button>
+            <button type="button" class="key" data-key="4">4</button>
+            <button type="button" class="key" data-key="5">5</button>
+            <button type="button" class="key" data-key="6">6</button>
+            <button type="button" class="key key-operator" data-key="subtract" aria-label="Restar">−</button>
+            <button type="button" class="key" data-key="1">1</button>
+            <button type="button" class="key" data-key="2">2</button>
+            <button type="button" class="key" data-key="3">3</button>
+            <button type="button" class="key key-operator" data-key="add" aria-label="Sumar">+</button>
+            <button type="button" class="key key-zero" data-key="0">0</button>
+            <button type="button" class="key" data-key="decimal" aria-label="Separador decimal">,</button>
+            <button type="button" class="key key-equals" data-key="equals" aria-label="Igual, calcular">=</button>
+          </div>
+          <div class="calculator-foot"><span>● SISTEMA OPERATIVO</span><span>256-BIT PRECISION ENGINE <span class="foot-sparkle">✧</span></span></div>
+        </section>
+      </main>
+      <footer class="site-footer"><span>© 2026 Calculadora Plus</span><span>Hecha para los momentos que cuentan.</span></footer>
+    </div>
+
+    <div class="modal-backdrop" id="paywall" hidden>
+      <section class="paywall" role="dialog" aria-modal="true" aria-labelledby="paywall-title" aria-describedby="paywall-description" tabindex="-1">
+        <button type="button" class="modal-close" id="close-paywall" aria-label="Cerrar ventana de suscripción"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 18 18M18 6 6 18" /></svg></button>
+        <div class="modal-top">
+          <div class="premium-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="m6 14 7 5 7-11 7 11 7-5-3 16H9L6 14Z" fill="currentColor" opacity=".94"/><path d="M10 33h20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+          <div class="premium-kicker">CALCULADORA PLUS <span>PRO</span></div>
+          <h2 id="paywall-title">Tu resultado<br />está listo<span class="title-period">.</span></h2>
+          <p id="paywall-description">Has llegado al último paso. Desbloquea Pro para descubrir la respuesta.</p>
+          <div class="locked-result"><span id="locked-expression">2 × 2</span><span class="equals-mark">=</span><span class="result-blurred">••••</span><svg viewBox="0 0 24 24" aria-label="Bloqueado" role="img"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        </div>
+        <div class="modal-body">
+          <div class="benefit"><span class="benefit-icon">✓</span><span>Resultados ilimitados, sin esperas</span></div>
+          <div class="benefit"><span class="benefit-icon">✓</span><span>Acceso completo al botón «=»</span></div>
+          <div class="benefit"><span class="benefit-icon">✓</span><span>Hasta un 100 % más de respuestas visibles</span></div>
+          <div class="plan-option"><div><span class="plan-name">Plan Pro mensual</span><span class="plan-detail">Todo el potencial de tus números</span></div><div class="plan-price"><strong>9,99 €</strong><span>/mes</span></div></div>
+          <button type="button" class="subscribe-button" id="subscribe-button">Desbloquear mi resultado <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+          <div class="modal-links"><span>Cancela cuando quieras</span><span aria-hidden="true">·</span><button type="button" id="restore-button">Restaurar compra</button></div>
+        </div>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>
